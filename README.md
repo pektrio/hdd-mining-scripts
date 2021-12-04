@@ -1,0 +1,1 @@
+# hdd-mining-scripts
