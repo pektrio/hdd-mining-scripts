@@ -13,7 +13,13 @@ fi
 if ! command -v yq &> /dev/null
 then
     echo "yq could not be found"
-    exit
+    exit 1
+fi
+
+if [ ! -d "$HOME/fd-cli" ]
+then
+    echo "fd-cli could not be found"
+    exit 1
 fi
 
 echo `date`
