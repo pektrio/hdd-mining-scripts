@@ -27,7 +27,7 @@ echo "starting recovery per each coin"
 cd $HOME/fd-cli
 python3 -m venv venv
 source venv/bin/activate
-for coin in flora hddcoin staicoin flax stor sit; do
+for coin in btcgreen flora hddcoin staicoin flax stor sit; do
 {
   port=`yq e '.full_node.rpc_port' $HOME/.$coin/mainnet/config/config.yaml`
   export FD_CLI_BC_DB_PATH=$HOME/.$coin/mainnet/db/blockchain_v1_mainnet.sqlite
