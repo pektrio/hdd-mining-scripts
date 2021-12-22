@@ -1,5 +1,7 @@
 import { exec, execSequence, OutputMode } from "https://deno.land/x/exec/mod.ts";
 
+const WALLET_HELPER_SH = new URL("./wallet_helper.sh", import.meta.url).pathname;
+
 export interface Wallet {
     amount: number,
     symbol: string
@@ -21,7 +23,7 @@ export async function getWallet (coin: string): Promise<Wallet> {
     // sequence.push(`cd /home/miner/${coin}-blockchain/`);
     // sequence.push("bash -c cd");
     // sequence.push('. ./activate');
-    sequence.push(`./wallet_helper.sh ${coin}`);
+    sequence.push(`${WALLET_HELPER_SH} ${coin}`);
 
     const result = await exec(sequence[0], { output: OutputMode.Capture, verbose: false });
     const [amount, symbol] = result.output.replace('-Total Balance:', '').trim().split(' ');

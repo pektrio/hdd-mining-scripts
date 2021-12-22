@@ -1,4 +1,4 @@
-#!/usr/bin/env -S /home/miner/.deno/bin/deno run --allow-net --allow-run --allow-read
+#!/usr/bin/env -S /home/miner/.deno/bin/deno run --allow-net --allow-run --allow-read --unstable
 
 import { getWallet, getForks, getPrice, Wallet, getExtendedWallets } from "./utils.ts";
 
