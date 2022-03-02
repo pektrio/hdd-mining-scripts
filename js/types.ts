@@ -11,7 +11,7 @@ export interface ExtendedWallet extends Wallet {
 
 export interface Fork {
     symbol: string,
-    default_price_usd_value: number
+    price: number
 }
 
 // export class Forks { 

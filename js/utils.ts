@@ -10,7 +10,7 @@ export async function getWallet(coin: string): Promise<Wallet> {
     const prefix = (await walletRpcCall(coin, port, 'get_network_info'))?.network_prefix; 
 
     return {
-        balance,
+        balance: balance * (coin === 'staicoin' && 1000 || 1),
         prefix
     };
 }
